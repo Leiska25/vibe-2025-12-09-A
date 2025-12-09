@@ -133,12 +133,12 @@ function createProductCard(product) {
 
 // Update product quantity
 async function updateQuantity(productId, newQuantity) {
-  newQuantity = parseInt(newQuantity);
-  
-  if (newQuantity < 0 || isNaN(newQuantity)) {
+  if (isNaN(newQuantity) || newQuantity < 0) {
     showNotification('Quantity cannot be negative', 'error');
     return;
   }
+  
+  newQuantity = parseInt(newQuantity);
   
   const product = products.find(p => p.id === productId);
   if (!product) return;
@@ -281,7 +281,7 @@ function filterProducts() {
   if (searchTerm) {
     filtered = filtered.filter(p => 
       p.name.toLowerCase().includes(searchTerm) ||
-      p.description.toLowerCase().includes(searchTerm)
+      (p.description && p.description.toLowerCase().includes(searchTerm))
     );
   }
   

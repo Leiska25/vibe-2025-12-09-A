@@ -107,10 +107,21 @@ app.post('/api/products', (req, res) => {
   if (!name || price === undefined || quantity === undefined) {
     return res.status(400).json({ error: 'Name, price, and quantity are required' });
   }
+  
+  const numPrice = parseFloat(price);
+  const numQuantity = parseInt(quantity);
+  
+  if (isNaN(numPrice) || numPrice < 0) {
+    return res.status(400).json({ error: 'Price must be a valid non-negative number' });
+  }
+  
+  if (isNaN(numQuantity) || numQuantity < 0) {
+    return res.status(400).json({ error: 'Quantity must be a valid non-negative integer' });
+  }
 
   db.run(
     'INSERT INTO products (name, description, price, quantity, category, image_url) VALUES (?, ?, ?, ?, ?, ?)',
-    [name, description || '', price, quantity, category || 'General', image_url || 'https://via.placeholder.com/150/999999/ffffff?text=Product'],
+    [name, description || '', numPrice, numQuantity, category || 'General', image_url || 'https://via.placeholder.com/150/999999/ffffff?text=Product'],
     function(err) {
       if (err) {
         res.status(500).json({ error: err.message });
@@ -125,9 +136,24 @@ app.post('/api/products', (req, res) => {
 app.put('/api/products/:id', (req, res) => {
   const { name, description, price, quantity, category, image_url } = req.body;
   
+  if (!name || price === undefined || quantity === undefined) {
+    return res.status(400).json({ error: 'Name, price, and quantity are required' });
+  }
+  
+  const numPrice = parseFloat(price);
+  const numQuantity = parseInt(quantity);
+  
+  if (isNaN(numPrice) || numPrice < 0) {
+    return res.status(400).json({ error: 'Price must be a valid non-negative number' });
+  }
+  
+  if (isNaN(numQuantity) || numQuantity < 0) {
+    return res.status(400).json({ error: 'Quantity must be a valid non-negative integer' });
+  }
+  
   db.run(
     'UPDATE products SET name = ?, description = ?, price = ?, quantity = ?, category = ?, image_url = ? WHERE id = ?',
-    [name, description, price, quantity, category, image_url, req.params.id],
+    [name, description, numPrice, numQuantity, category, image_url, req.params.id],
     function(err) {
       if (err) {
         res.status(500).json({ error: err.message });
