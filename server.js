@@ -47,28 +47,28 @@ function initializeDatabase() {
         if (err) {
           console.error('Error checking products:', err.message);
         } else if (row.count === 0) {
-          // Populate with 20 sample products
+          // Populate with 20 sample products for diving equipment store
           const sampleProducts = [
-            { name: 'Wireless Mouse', description: 'Ergonomic wireless mouse with USB receiver', price: 29.99, quantity: 45, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Mouse' },
-            { name: 'Mechanical Keyboard', description: 'RGB backlit mechanical gaming keyboard', price: 89.99, quantity: 23, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Keyboard' },
-            { name: 'USB-C Cable', description: 'High-speed USB-C charging cable 6ft', price: 14.99, quantity: 120, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=Cable' },
-            { name: 'Laptop Stand', description: 'Adjustable aluminum laptop stand', price: 39.99, quantity: 34, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=Stand' },
-            { name: 'Webcam HD', description: '1080p HD webcam with built-in microphone', price: 59.99, quantity: 18, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Webcam' },
-            { name: 'Desk Lamp', description: 'LED desk lamp with adjustable brightness', price: 34.99, quantity: 67, category: 'Office', image_url: 'https://via.placeholder.com/150/00cc66/ffffff?text=Lamp' },
-            { name: 'Notebook Set', description: 'Set of 3 premium lined notebooks', price: 19.99, quantity: 89, category: 'Stationery', image_url: 'https://via.placeholder.com/150/cc00cc/ffffff?text=Notebooks' },
-            { name: 'Pen Pack', description: 'Pack of 12 ballpoint pens', price: 9.99, quantity: 156, category: 'Stationery', image_url: 'https://via.placeholder.com/150/cc00cc/ffffff?text=Pens' },
-            { name: 'Monitor 24"', description: '24-inch Full HD LED monitor', price: 179.99, quantity: 12, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Monitor' },
-            { name: 'Headphones', description: 'Noise-cancelling over-ear headphones', price: 129.99, quantity: 28, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Headphones' },
-            { name: 'Phone Stand', description: 'Adjustable phone holder for desk', price: 15.99, quantity: 73, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=Phone+Stand' },
-            { name: 'Mouse Pad', description: 'Large gaming mouse pad with smooth surface', price: 19.99, quantity: 91, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=Mouse+Pad' },
-            { name: 'Desk Organizer', description: 'Multi-compartment desk organizer', price: 24.99, quantity: 42, category: 'Office', image_url: 'https://via.placeholder.com/150/00cc66/ffffff?text=Organizer' },
-            { name: 'Wireless Charger', description: 'Fast wireless charging pad', price: 29.99, quantity: 55, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Charger' },
-            { name: 'Paper Clips Box', description: 'Box of 500 paper clips', price: 5.99, quantity: 203, category: 'Stationery', image_url: 'https://via.placeholder.com/150/cc00cc/ffffff?text=Clips' },
-            { name: 'Stapler', description: 'Heavy-duty desktop stapler', price: 12.99, quantity: 64, category: 'Office', image_url: 'https://via.placeholder.com/150/00cc66/ffffff?text=Stapler' },
-            { name: 'Bluetooth Speaker', description: 'Portable waterproof Bluetooth speaker', price: 49.99, quantity: 31, category: 'Electronics', image_url: 'https://via.placeholder.com/150/0066cc/ffffff?text=Speaker' },
-            { name: 'USB Hub', description: '4-port USB 3.0 hub', price: 22.99, quantity: 47, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=USB+Hub' },
-            { name: 'Sticky Notes', description: 'Colorful sticky notes pack of 6', price: 8.99, quantity: 137, category: 'Stationery', image_url: 'https://via.placeholder.com/150/cc00cc/ffffff?text=Notes' },
-            { name: 'Cable Management', description: 'Cable organizer clips set of 20', price: 11.99, quantity: 82, category: 'Accessories', image_url: 'https://via.placeholder.com/150/ff6600/ffffff?text=Cable+Mgmt' }
+            { name: 'Competition Swimsuit - Women', description: 'Professional racing swimsuit with hydrodynamic design', price: 89.99, quantity: 45, category: 'Swimwear', image_url: 'https://via.placeholder.com/150/0088cc/ffffff?text=Women+Suit' },
+            { name: 'Competition Swimsuit - Men', description: 'High-performance racing brief for competitive diving', price: 79.99, quantity: 38, category: 'Swimwear', image_url: 'https://via.placeholder.com/150/0088cc/ffffff?text=Men+Suit' },
+            { name: 'Microfiber Towel Large', description: 'Quick-dry microfiber towel 30x60 inches', price: 24.99, quantity: 120, category: 'Towels', image_url: 'https://via.placeholder.com/150/00ccaa/ffffff?text=Large+Towel' },
+            { name: 'Microfiber Towel Medium', description: 'Compact microfiber towel 20x40 inches', price: 18.99, quantity: 150, category: 'Towels', image_url: 'https://via.placeholder.com/150/00ccaa/ffffff?text=Medium+Towel' },
+            { name: 'Pool Sandals - Adult', description: 'Non-slip pool sandals with arch support', price: 29.99, quantity: 85, category: 'Footwear', image_url: 'https://via.placeholder.com/150/ff8800/ffffff?text=Sandals' },
+            { name: 'Pool Sandals - Youth', description: 'Comfortable non-slip sandals for young divers', price: 22.99, quantity: 67, category: 'Footwear', image_url: 'https://via.placeholder.com/150/ff8800/ffffff?text=Youth+Sandals' },
+            { name: 'Diving Board - 1 Meter', description: 'Professional springboard with aluminum stand', price: 1299.99, quantity: 8, category: 'Equipment', image_url: 'https://via.placeholder.com/150/cc0066/ffffff?text=1M+Board' },
+            { name: 'Diving Board - 3 Meter', description: 'Competition-grade 3-meter springboard', price: 1899.99, quantity: 5, category: 'Equipment', image_url: 'https://via.placeholder.com/150/cc0066/ffffff?text=3M+Board' },
+            { name: 'Platform Diving Board', description: '5-meter platform diving board', price: 2499.99, quantity: 3, category: 'Equipment', image_url: 'https://via.placeholder.com/150/cc0066/ffffff?text=Platform' },
+            { name: 'Swim Cap - Silicone', description: 'Durable silicone swim cap in multiple colors', price: 12.99, quantity: 200, category: 'Accessories', image_url: 'https://via.placeholder.com/150/6600cc/ffffff?text=Swim+Cap' },
+            { name: 'Goggles - Competition', description: 'Anti-fog racing goggles with UV protection', price: 34.99, quantity: 95, category: 'Accessories', image_url: 'https://via.placeholder.com/150/6600cc/ffffff?text=Goggles' },
+            { name: 'Nose Clip', description: 'Professional nose clip for synchronized diving', price: 8.99, quantity: 180, category: 'Accessories', image_url: 'https://via.placeholder.com/150/6600cc/ffffff?text=Nose+Clip' },
+            { name: 'Training Fins', description: 'Short training fins for technique improvement', price: 44.99, quantity: 52, category: 'Training', image_url: 'https://via.placeholder.com/150/009900/ffffff?text=Fins' },
+            { name: 'Kickboard', description: 'Foam kickboard for diving practice', price: 19.99, quantity: 75, category: 'Training', image_url: 'https://via.placeholder.com/150/009900/ffffff?text=Kickboard' },
+            { name: 'Diving Robe', description: 'Absorbent microfiber changing robe', price: 54.99, quantity: 42, category: 'Apparel', image_url: 'https://via.placeholder.com/150/0088cc/ffffff?text=Robe' },
+            { name: 'Team Backpack', description: 'Waterproof backpack with multiple compartments', price: 49.99, quantity: 68, category: 'Bags', image_url: 'https://via.placeholder.com/150/333333/ffffff?text=Backpack' },
+            { name: 'Mesh Gear Bag', description: 'Large mesh bag for wet equipment', price: 24.99, quantity: 110, category: 'Bags', image_url: 'https://via.placeholder.com/150/333333/ffffff?text=Mesh+Bag' },
+            { name: 'Chamois Towel', description: 'Super-absorbent synthetic chamois towel', price: 16.99, quantity: 88, category: 'Towels', image_url: 'https://via.placeholder.com/150/00ccaa/ffffff?text=Chamois' },
+            { name: 'Dive Log Book', description: 'Waterproof log book for recording dives', price: 14.99, quantity: 45, category: 'Accessories', image_url: 'https://via.placeholder.com/150/6600cc/ffffff?text=Log+Book' },
+            { name: 'Ear Plugs - Swimming', description: 'Moldable silicone ear plugs for water protection', price: 9.99, quantity: 165, category: 'Accessories', image_url: 'https://via.placeholder.com/150/6600cc/ffffff?text=Ear+Plugs' }
           ];
 
           const stmt = db.prepare('INSERT INTO products (name, description, price, quantity, category, image_url) VALUES (?, ?, ?, ?, ?, ?)');

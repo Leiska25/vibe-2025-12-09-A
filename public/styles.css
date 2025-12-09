@@ -5,14 +5,14 @@
 }
 
 :root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
+  --primary-color: #0891b2;
+  --primary-hover: #0e7490;
   --secondary-color: #6b7280;
   --danger-color: #ef4444;
   --danger-hover: #dc2626;
   --success-color: #10b981;
   --warning-color: #f59e0b;
-  --background: #f9fafb;
+  --background: #ecfeff;
   --card-background: #ffffff;
   --text-primary: #111827;
   --text-secondary: #6b7280;

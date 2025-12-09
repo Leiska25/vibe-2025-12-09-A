@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory Management System</title>
+  <title>Dive Pro Inventory System</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>📦 Inventory Management System</h1>
-      <p class="subtitle">Manage your retail store inventory with ease</p>
+      <h1>🏊 Dive Pro Inventory System</h1>
+      <p class="subtitle">Manage your diving equipment store inventory</p>
     </header>
 
     <div class="controls">
@@ -19,10 +19,14 @@
         <input type="text" id="searchInput" placeholder="🔍 Search products..." class="search-input">
         <select id="categoryFilter" class="filter-select">
           <option value="">All Categories</option>
-          <option value="Electronics">Electronics</option>
+          <option value="Swimwear">Swimwear</option>
+          <option value="Towels">Towels</option>
+          <option value="Footwear">Footwear</option>
+          <option value="Equipment">Equipment</option>
           <option value="Accessories">Accessories</option>
-          <option value="Office">Office</option>
-          <option value="Stationery">Stationery</option>
+          <option value="Training">Training</option>
+          <option value="Apparel">Apparel</option>
+          <option value="Bags">Bags</option>
           <option value="General">General</option>
         </select>
       </div>
@@ -66,7 +70,7 @@
       <form id="productForm">
         <div class="form-group">
           <label for="productName">Product Name *</label>
-          <input type="text" id="productName" required placeholder="e.g., Wireless Mouse">
+          <input type="text" id="productName" required placeholder="e.g., Competition Swimsuit">
         </div>
         <div class="form-group">
           <label for="productDescription">Description</label>
@@ -85,10 +89,14 @@
         <div class="form-group">
           <label for="productCategory">Category</label>
           <select id="productCategory">
-            <option value="Electronics">Electronics</option>
+            <option value="Swimwear">Swimwear</option>
+            <option value="Towels">Towels</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Equipment">Equipment</option>
             <option value="Accessories">Accessories</option>
-            <option value="Office">Office</option>
-            <option value="Stationery">Stationery</option>
+            <option value="Training">Training</option>
+            <option value="Apparel">Apparel</option>
+            <option value="Bags">Bags</option>
             <option value="General">General</option>
           </select>
         </div>
